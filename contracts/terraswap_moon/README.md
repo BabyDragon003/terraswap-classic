@@ -1,4 +1,3 @@
-# TerraSwap Moon
 
 ## Handlers
 

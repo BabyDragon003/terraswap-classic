@@ -1,4 +1,3 @@
-{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Cw20HookMsg",
   "anyOf": [
@@ -28,6 +27,37 @@
                 "null"
               ],
               "format": "uint64",
+              "minimum": 0.0
+            },
+            "max_spread": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/Decimal"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "to": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "withdraw_liquidity"
+      ],
+      "properties": {
+        "withdraw_liquidity": {
+          "type": "object",
           "properties": {
             "deadline": {
               "type": [

@@ -1,4 +1,3 @@
-use crate::contract::{
     assert_max_spread, assert_minimum_assets, execute, instantiate, query_moon_info, query_pool,
     query_reverse_simulation, query_simulation, reply,
 };
@@ -28,6 +27,37 @@ fn proper_initialization() {
         asset_infos: [
             AssetInfo::NativeToken {
                 denom: "uusd".to_string(),
+            },
+            AssetInfo::Token {
+                contract_addr: "asset0000".to_string(),
+            },
+        ],
+        token_code_id: 10u64,
+        asset_decimals: [6u8, 8u8],
+    };
+
+    // we can just call .unwrap() to assert this was a success
+    let env = mock_env();
+    let info = mock_info("addr0000", &[]);
+    let res = instantiate(deps.as_mut(), env, info, msg).unwrap();
+    assert_eq!(
+        res.messages,
+        vec![SubMsg {
+            msg: WasmMsg::Instantiate {
+                code_id: 10u64,
+                msg: to_binary(&TokenInstantiateMsg {
+                    name: "terraswap liquidity token".to_string(),
+                    symbol: "uLP".to_string(),
+                    decimals: 6,
+                    initial_balances: vec![],
+                    mint: Some(MinterResponse {
+                        minter: MOCK_CONTRACT_ADDR.to_string(),
+                        cap: None,
+                    }),
+                })
+                .unwrap(),
+                funds: vec![],
+                label: "lp".to_string(),
                 admin: None,
             }
             .into(),

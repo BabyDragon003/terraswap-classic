@@ -1,4 +1,3 @@
-{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "InstantiateMsg",
   "type": "object",
@@ -28,6 +27,37 @@
         {
           "type": "null"
         }
+      ]
+    },
+    "mint": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/MinterResponse"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "Binary": {
+      "description": "Binary is a wrapper around Vec<u8> to add base64 de/serialization with serde. It also adds some helper methods to help encode inline.\n\nThis is only needed as serde-json-{core,wasm} has a horrible encoding for Vec<u8>. See also <https://github.com/CosmWasm/cosmwasm/blob/main/docs/MESSAGE_TYPES.md>.",
+      "type": "string"
+    },
+    "Cw20Coin": {
+      "type": "object",
+      "required": [
+        "address",
+        "amount"
+      ],
+      "properties": {
         "address": {
           "type": "string"
         },

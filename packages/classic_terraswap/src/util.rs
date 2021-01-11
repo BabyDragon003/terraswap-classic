@@ -1,4 +1,3 @@
-use classic_bindings::TerraQuery;
 use cosmwasm_std::{DepsMut, StdError, StdResult};
 use cw2::{get_contract_version, set_contract_version};
 

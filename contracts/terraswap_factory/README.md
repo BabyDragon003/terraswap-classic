@@ -1,4 +1,3 @@
-# TerraSwap Factory
 
 The factory contract can perform creation of terraswap pair contract and also be used as directory contract for all pairs.
 
@@ -28,6 +27,37 @@ Change the factory contract's owner and relevant code IDs for future pair contra
     "token_id": 123,
     "pair_code_id": 123
   }
+}
+```
+
+### `create_pair`
+When a user executes `CreatePair` operation, it creates `Pair` contract and `LP(liquidity provider)` token contract.
+
+In order to create pairs with native tokens, including IBC tokens, they must first be registered with their decimals by the factory contract owner. See [add_native_token_decimals](#add_native_token_decimals) for more details.
+
+```json
+{
+  "create_pair": {
+    "assets": [
+      {
+        "info": {
+          "token": {
+            "contract_addr": "terra..."
+          }
+        },
+        "amount": "0"
+      },
+      {
+        "info": {
+          "native_token": {
+            "denom": "uusd"
+          }
+        },
+        "amount": "0"
+      }
+    ]
+  }
+}
 ```
 
 ### `add_native_token_decimals`
