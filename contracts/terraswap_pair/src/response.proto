@@ -1,3 +1,4 @@
+syntax = "proto3";
 
 // MsgInstantiateContractResponse defines the Msg/InstantiateContract response type.
 message MsgInstantiateContractResponse {

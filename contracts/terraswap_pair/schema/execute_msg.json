@@ -1,3 +1,4 @@
+{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "ExecuteMsg",
   "anyOf": [
@@ -7,17 +8,6 @@
         "receive"
       ],
       "properties": {
-        "receive": {
-          "$ref": "#/definitions/Cw20ReceiveMsg"
-        }
-      },
-      "additionalProperties": false
-    },
-    {
-      "description": "ProvideLiquidity a user provides pool liquidity",
-      "type": "object",
-      "required": [
-        "provide_liquidity"
       ],
       "properties": {
         "provide_liquidity": {

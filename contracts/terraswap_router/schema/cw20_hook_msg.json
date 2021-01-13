@@ -1,3 +1,4 @@
+{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Cw20HookMsg",
   "anyOf": [
@@ -7,17 +8,6 @@
         "execute_swap_operations"
       ],
       "properties": {
-        "execute_swap_operations": {
-          "type": "object",
-          "required": [
-            "operations"
-          ],
-          "properties": {
-            "deadline": {
-              "type": [
-                "integer",
-                "null"
-              ],
               "format": "uint64",
               "minimum": 0.0
             },
