@@ -18,16 +18,11 @@
       },
       "maxItems": 2,
       "minItems": 2
-          "type": "object",
-          "required": [
-            "token"
-          ],
-          "properties": {
-            "token": {
-              "type": "object",
-              "required": [
-                "contract_addr"
-              ],
+    },
+    "asset_infos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AssetInfo"
               "properties": {
                 "contract_addr": {
                   "type": "string"
