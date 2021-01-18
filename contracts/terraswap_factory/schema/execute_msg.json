@@ -1,4 +1,3 @@
-{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "ExecuteMsg",
   "anyOf": [
@@ -23,6 +22,32 @@
                 "integer",
                 "null"
               ],
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "token_code_id": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "CreatePair instantiates pair contract",
+      "type": "object",
+      "required": [
+        "create_pair"
+      ],
+      "properties": {
+        "create_pair": {
+          "type": "object",
+          "required": [
             "assets"
           ],
           "properties": {

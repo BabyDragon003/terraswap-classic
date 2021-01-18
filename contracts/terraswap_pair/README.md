@@ -1,4 +1,3 @@
-# TerraSwap Pair
 
 ## Handlers
 
