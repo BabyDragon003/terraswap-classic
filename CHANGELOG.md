@@ -1,3 +1,4 @@
+# 2.7.0
 
 * [a189de](https://github.com/terraswap/classic-terraswap/pull/15/commits/a189de88440f5a26e4104aa950fddbcb259a457e) Prevention of share calculation overflow
 * [be08cb](https://github.com/terraswap/classic-terraswap/pull/15/commits/be08cb28d04b2310cadebe6a93a82d132303dc45) Refund & desired asset to provide liqudity

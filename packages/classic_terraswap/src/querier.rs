@@ -1,3 +1,4 @@
+use crate::asset::{Asset, AssetInfo, PairInfo};
 use crate::factory::{NativeTokenDecimalsResponse, QueryMsg as FactoryQueryMsg};
 use crate::pair::{QueryMsg as PairQueryMsg, ReverseSimulationResponse, SimulationResponse};
 
