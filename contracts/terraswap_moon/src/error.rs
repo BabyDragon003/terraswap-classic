@@ -13,22 +13,6 @@ pub enum ContractError {
     ConversionOverflowError(#[from] ConversionOverflowError),
 
     #[error("Unauthorized")]
-    Unauthorized {},
-
-    #[error("Not Reward or Order token")]
-    UnacceptableToken {},
-
-    #[error("Less CLSM amount than vesting amount")]
-    LessThanVesting {},
-
-    #[error("Invalid zero amount")]
-    InvalidZeroAmount {},
-
-    #[error("Max spread assertion")]
-    MaxSpreadAssertion {},
-
-    #[error("Asset mismatch")]
-    AssetMismatch {},
 
     #[error("Min amount assertion ({min_asset} > {asset})")]
     MinAmountAssertion { min_asset: String, asset: String },
