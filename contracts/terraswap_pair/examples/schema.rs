@@ -18,10 +18,3 @@ fn main() {
     export_schema(&schema_for!(InstantiateMsg), &out_dir);
     export_schema(&schema_for!(ExecuteMsg), &out_dir);
     export_schema(&schema_for!(MigrateMsg), &out_dir);
-    export_schema(&schema_for!(Cw20HookMsg), &out_dir);
-    export_schema(&schema_for!(QueryMsg), &out_dir);
-    export_schema(&schema_for!(PairInfo), &out_dir);
-    export_schema(&schema_for!(PoolResponse), &out_dir);
-    export_schema(&schema_for!(ReverseSimulationResponse), &out_dir);
-    export_schema(&schema_for!(SimulationResponse), &out_dir);
-}
