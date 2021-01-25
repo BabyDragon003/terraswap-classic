@@ -1,4 +1,3 @@
-use classic_bindings::TerraQuery;
 use cosmwasm_std::{DepsMut, StdError, StdResult};
 use cw2::{get_contract_version, set_contract_version};
 
@@ -18,6 +17,27 @@ pub fn migrate_version(
     name: &str,
     version: &str,
 ) -> StdResult<()> {
+    let prev_version = get_contract_version(deps.as_ref().storage)?;
+    if prev_version.contract != name {
+        return Err(StdError::generic_err("invalid contract"));
+    }
+
+    if prev_version.version != target_contract_version {
+        return Err(StdError::generic_err(format!(
+            "invalid contract version. target {}, but source is {}",
+            target_contract_version, prev_version.version
+        )));
+    }
+
+    set_contract_version(deps.storage, name, version)?;
+
+    Ok(())
+}
+
+#[test]
+fn test_assert_deadline_with_normal() {
+    assert_deadline(5u64, Some(10u64)).unwrap();
+}
 
 #[test]
 fn test_assert_deadline_with_expired() {

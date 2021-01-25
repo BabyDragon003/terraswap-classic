@@ -1,4 +1,3 @@
-use crate::error::ContractError;
 use crate::response::MsgInstantiateContractResponse;
 use crate::state::MOON_CONFIG;
 use crate::util;
