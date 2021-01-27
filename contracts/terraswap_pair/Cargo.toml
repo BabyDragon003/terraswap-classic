@@ -1,3 +1,4 @@
+[package]
 name = "terraswap-pair"
 version = "0.2.0"
 authors = ["Terraform Labs, PTE.", "DELIGHT LABS"]
@@ -7,17 +8,6 @@ license = "MIT"
 
 exclude = [
   # Those files are rust-optimizer artifacts. You might want to commit them for convenience but they should not be part of the source code publication.
-  "contract.wasm",
-  "hash.txt",
-]
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[lib]
-crate-type = ["cdylib", "rlib"]
-
-[profile.release]
-opt-level = 3
 debug = false
 rpath = false
 lto = true
