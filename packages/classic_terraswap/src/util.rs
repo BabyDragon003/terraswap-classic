@@ -8,26 +8,16 @@ pub fn assert_deadline(blocktime: u64, deadline: Option<u64>) -> StdResult<()> {
             return Err(StdError::generic_err("Expired deadline"));
         }
     }
-    if prev_version.contract != name {
-        return Err(StdError::generic_err("invalid contract"));
-    }
-
-    if prev_version.version != target_contract_version {
-        return Err(StdError::generic_err(format!(
-            "invalid contract version. target {}, but source is {}",
-            target_contract_version, prev_version.version
-        )));
-    }
-
-    set_contract_version(deps.storage, name, version)?;
 
     Ok(())
 }
 
-#[test]
-fn test_assert_deadline_with_normal() {
-    assert_deadline(5u64, Some(10u64)).unwrap();
-}
+pub fn migrate_version(
+    deps: DepsMut<TerraQuery>,
+    target_contract_version: &str,
+    name: &str,
+    version: &str,
+) -> StdResult<()> {
 
 #[test]
 fn test_assert_deadline_with_expired() {

@@ -8,6 +8,17 @@ use cosmwasm_std::{
 use crate::querier::compute_tax;
 use crate::state::{Config, CONFIG};
 
+use classic_bindings::{TerraMsg, TerraQuery};
+
+use classic_terraswap::asset::{Asset, AssetInfo, PairInfo};
+use classic_terraswap::pair::ExecuteMsg as PairExecuteMsg;
+use classic_terraswap::querier::{query_balance, query_pair_info, query_token_balance};
+use classic_terraswap::router::SwapOperation;
+use classic_terraswap::util::assert_deadline;
+use cw20::Cw20ExecuteMsg;
+
+/// Execute swap operation
+/// swap all offer asset to ask asset
 pub fn execute_swap_operation(
     deps: DepsMut<TerraQuery>,
     env: Env,

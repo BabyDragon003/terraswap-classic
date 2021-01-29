@@ -8,6 +8,17 @@
         "config"
       ],
       "properties": {
+        "config": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "simulate_swap_operations"
+      ],
       "properties": {
         "simulate_swap_operations": {
           "type": "object",
