@@ -1,3 +1,4 @@
+# Terraswap: Common Types
 
 This is a collection of common types and the queriers which are commonly used in terraswap contracts.
 
@@ -12,22 +13,6 @@ AssetInfo is a convience wrapper to represent the native token and the contract 
 pub enum AssetInfo {
     Token { contract_addr: HumanAddr },
     NativeToken { denom: String },
-}
-```
-
-### Asset
-
-It contains asset info with the amount of token. 
-
-```rust
-pub struct Asset {
-    pub info: AssetInfo,
-    pub amount: Uint128,
-}
-```
-
-### PairInfo
-
 It is used to represent response data of [Pair-Info-Querier](#Pair-Info-Querier)
 
 ```rust

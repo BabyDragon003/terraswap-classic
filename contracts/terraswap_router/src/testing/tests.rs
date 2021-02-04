@@ -1,3 +1,4 @@
+use cosmwasm_std::testing::{mock_env, mock_info, MOCK_CONTRACT_ADDR};
 use cosmwasm_std::{
     coin, from_binary, to_binary, Coin, CosmosMsg, Decimal, StdError, SubMsg, Uint128, WasmMsg,
 };
@@ -12,22 +13,6 @@ use classic_terraswap::router::{
     ConfigResponse, Cw20HookMsg, ExecuteMsg, InstantiateMsg, QueryMsg,
     SimulateSwapOperationsResponse, SwapOperation,
 };
-use cw20::{Cw20ExecuteMsg, Cw20ReceiveMsg};
-
-#[test]
-fn proper_initialization() {
-    let mut deps = mock_dependencies(&[]);
-
-    let msg = InstantiateMsg {
-        terraswap_factory: "terraswapfactory".to_string(),
-    };
-
-    let info = mock_info("addr0000", &[]);
-
-    // we can just call .unwrap() to assert this was a success
-    let _res = instantiate(deps.as_mut(), mock_env(), info, msg).unwrap();
-
-    // it worked, let's query the state
     let config: ConfigResponse =
         from_binary(&query(deps.as_ref(), mock_env(), QueryMsg::Config {}).unwrap()).unwrap();
     assert_eq!("terraswapfactory", config.terraswap_factory.as_str());
