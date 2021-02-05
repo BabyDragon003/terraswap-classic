@@ -13,6 +13,22 @@ use classic_terraswap::pair::{
     ExecuteMsg as PairExecuteMsg, InstantiateMsg as PairInstantiateMsg,
     MigrateMsg as PairMigrateMsg,
 };
+use cosmwasm_std::testing::{mock_env, mock_info, MockApi, MockStorage, MOCK_CONTRACT_ADDR};
+use cosmwasm_std::{
+    attr, coin, coins, from_binary, to_binary, Addr, CosmosMsg, OwnedDeps, Reply, ReplyOn,
+    Response, StdError, SubMsg, SubMsgResponse, SubMsgResult, Uint128, WasmMsg,
+};
+use cw20::Cw20ExecuteMsg;
+
+#[test]
+fn proper_initialization() {
+    let mut deps = mock_dependencies(&[]);
+
+    let msg = InstantiateMsg {
+        pair_code_id: 321u64,
+        token_code_id: 123u64,
+    };
+
     let info = mock_info("addr0000", &[]);
 
     // we can just call .unwrap() to assert this was a success
