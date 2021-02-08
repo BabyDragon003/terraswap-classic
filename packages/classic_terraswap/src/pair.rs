@@ -1,4 +1,3 @@
-use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
 use crate::asset::{Asset, AssetInfo};
@@ -18,6 +17,27 @@ pub struct InstantiateMsg {
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
+#[serde(rename_all = "snake_case")]
+pub enum ExecuteMsg {
+    Receive(Cw20ReceiveMsg),
+    /// ProvideLiquidity a user provides pool liquidity
+    ProvideLiquidity {
+        assets: [Asset; 2],
+        receiver: Option<String>,
+        deadline: Option<u64>,
+        slippage_tolerance: Option<Decimal>,
+    },
+    /// Swap an offer asset to the other
+    Swap {
+        offer_asset: Asset,
+        belief_price: Option<Decimal>,
+        max_spread: Option<Decimal>,
+        to: Option<String>,
+        deadline: Option<u64>,
+    },
+    SetMoonAddress {
+        moon_addr: String
+    },
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq, JsonSchema)]

@@ -1,4 +1,3 @@
-use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
 use classic_terraswap::asset::{AssetInfoRaw, AssetRaw, PairInfo, PairInfoRaw};

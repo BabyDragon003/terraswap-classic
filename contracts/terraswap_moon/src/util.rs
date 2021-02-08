@@ -1,4 +1,3 @@
-use crate::error::ContractError;
 use cosmwasm_std::{
     to_binary, Addr, BalanceResponse as NativeBalanceResponse, BankMsg, BankQuery, Coin, CosmosMsg,
     QuerierWrapper, QueryRequest, Uint128, WasmMsg, WasmQuery,
@@ -18,6 +17,27 @@ pub fn get_token_amount(
                     denom: native_str,
                 }))?;
             return Ok(native_response.amount.amount);
+        }
+        Denom::Cw20(cw20_address) => {
+            let balance_response: CW20BalanceResponse =
+                querier.query(&QueryRequest::Wasm(WasmQuery::Smart {
+                    contract_addr: cw20_address.clone().into(),
+                    msg: to_binary(&Cw20QueryMsg::Balance {
+                        address: contract_addr.clone().into(),
+                    })?,
+                }))?;
+            return Ok(balance_response.balance);
+        }
+    }
+}
+
+pub fn transfer_token_message(
+    denom: Denom,
+    amount: Uint128,
+    receiver: Addr,
+) -> Result<CosmosMsg, ContractError> {
+    match denom.clone() {
+        Denom::Native(native_str) => {
             return Ok(BankMsg::Send {
                 to_address: receiver.clone().into(),
                 amount: vec![Coin {

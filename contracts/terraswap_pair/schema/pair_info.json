@@ -1,4 +1,3 @@
-{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "PairInfo",
   "type": "object",
@@ -18,6 +17,27 @@
       },
       "maxItems": 2,
       "minItems": 2
+    },
+    "asset_infos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AssetInfo"
+      },
+      "maxItems": 2,
+      "minItems": 2
+    },
+    "contract_addr": {
+      "type": "string"
+    },
+    "liquidity_token": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "AssetInfo": {
+      "description": "AssetInfo contract_addr is usually passed from the cw20 hook so we can trust the contract_addr is properly validated.",
+      "anyOf": [
+        {
           "type": "object",
           "required": [
             "token"

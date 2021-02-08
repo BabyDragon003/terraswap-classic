@@ -1,4 +1,3 @@
-# Classic TerraSwap
 [![classic_terraswap on crates.io](https://img.shields.io/crates/v/classic_terraswap.svg)](https://crates.io/crates/classic_terraswap)
 [![workflow](https://github.com/terraswap/classic-terraswap/actions/workflows/tests.yml/badge.svg)](https://github.com/terraswap/classic-terraswap/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/terraswap/classic-terraswap/branch/main/graph/badge.svg?token=ERMFLEY6Y7)](https://codecov.io/gh/terraswap/classic-terraswap)

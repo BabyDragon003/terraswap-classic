@@ -1,4 +1,3 @@
-## Summary of changes
 
 <Describe summary of major changes here>
 
