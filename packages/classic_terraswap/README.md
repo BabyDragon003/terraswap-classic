@@ -1,13 +1,8 @@
+# Terraswap: Common Types
 
 This is a collection of common types and the queriers which are commonly used in terraswap contracts.
 
 ## Data Types
-
-### AssetInfo
-
-AssetInfo is a convience wrapper to represent the native token and the contract token as a single type.
-
-```rust
 #[serde(rename_all = "snake_case")]
 pub enum AssetInfo {
     Token { contract_addr: HumanAddr },

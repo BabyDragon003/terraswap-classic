@@ -1,13 +1,8 @@
+{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "PairsResponse",
   "type": "object",
   "required": [
-    "pairs"
-  ],
-  "properties": {
-    "pairs": {
-      "type": "array",
-      "items": {
         "$ref": "#/definitions/PairInfo"
       }
     }
