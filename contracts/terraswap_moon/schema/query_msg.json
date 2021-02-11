@@ -3,26 +3,16 @@
   "title": "QueryMsg",
   "anyOf": [
     {
-          "type": "object"
-        }
-      },
-      "additionalProperties": false
-    },
-    {
       "type": "object",
       "required": [
-        "pool"
+        "moon"
       ],
       "properties": {
-        "pool": {
+        "moon": {
           "type": "object"
         }
       },
       "additionalProperties": false
-    },
-    {
-      "type": "object",
-      "required": [
         "simulation"
       ],
       "properties": {

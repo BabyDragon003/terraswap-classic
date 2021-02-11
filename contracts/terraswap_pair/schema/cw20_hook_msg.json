@@ -3,26 +3,16 @@
   "title": "Cw20HookMsg",
   "anyOf": [
     {
+      "description": "Sell a given amount of asset",
+      "type": "object",
+      "required": [
+        "swap"
+      ],
+      "properties": {
         "swap": {
           "type": "object",
           "properties": {
             "belief_price": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/Decimal"
-                },
-                {
-                  "type": "null"
-                }
-              ]
-            },
-            "deadline": {
-              "type": [
-                "integer",
-                "null"
-              ],
-              "format": "uint64",
-              "minimum": 0.0
             },
             "max_spread": {
               "anyOf": [
