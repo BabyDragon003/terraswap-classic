@@ -1,3 +1,4 @@
+use crate::error::ContractError;
 use crate::response::MsgInstantiateContractResponse;
 use crate::state::{Config, CONFIG, PAIR_INFO};
 
