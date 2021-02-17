@@ -3,16 +3,11 @@
   "title": "AssetInfo",
   "description": "AssetInfo contract_addr is usually passed from the cw20 hook so we can trust the contract_addr is properly validated.",
   "anyOf": [
-        "token": {
-          "type": "object",
-          "required": [
-            "contract_addr"
-          ],
-          "properties": {
-            "contract_addr": {
-              "type": "string"
-            }
-          }
+    {
+      "type": "object",
+      "required": [
+        "token"
+      ],
         }
       },
       "additionalProperties": false
