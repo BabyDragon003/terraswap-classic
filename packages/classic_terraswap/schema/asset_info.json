@@ -8,16 +8,11 @@
       "required": [
         "token"
       ],
-        }
-      },
-      "additionalProperties": false
-    },
-    {
-      "type": "object",
-      "required": [
-        "native_token"
-      ],
       "properties": {
+        "token": {
+          "type": "object",
+          "required": [
+            "contract_addr"
         "native_token": {
           "type": "object",
           "required": [

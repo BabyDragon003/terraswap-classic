@@ -8,16 +8,11 @@
     "contract_addr",
     "liquidity_token"
   ],
-    "asset_infos": {
+  "properties": {
+    "asset_decimals": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/AssetInfo"
-      },
-      "maxItems": 2,
-      "minItems": 2
-    },
-    "contract_addr": {
-      "type": "string"
+        "type": "integer",
     },
     "liquidity_token": {
       "type": "string"

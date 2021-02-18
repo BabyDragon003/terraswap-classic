@@ -8,6 +8,17 @@ Uniswap-inspired automated market-maker (AMM) protocol powered by Smart Contract
 ## Contracts
 
 | Name                                               | Description                                  |
+| -------------------------------------------------- | -------------------------------------------- |
+| [`terraswap_factory`](contracts/terraswap_factory) |                                              |
+| [`terraswap_pair`](contracts/terraswap_pair)       |                                              |
+| [`terraswap_router`](contracts/terraswap_router)   |                                              |
+| [`terraswap_token`](contracts/terraswap_token)     | CW20 (ERC20 equivalent) token implementation |
+
+* terraswap_factory
+
+   Mainnet: `terra1jkndu9w5attpz09ut02sgey5dd3e8sq5watzm0`
+
+* terraswap_router
 
    Mainnet: `terra1g3zc8lwwmkrm0cz9wkgl849pdqaw6cq8lh7872`
 

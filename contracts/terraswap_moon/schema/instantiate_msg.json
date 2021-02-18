@@ -8,16 +8,11 @@
     "token_code_id"
   ],
   "properties": {
-      "description": "Asset infos",
+    "asset_decimals": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/AssetInfo"
-      },
-      "maxItems": 2,
-      "minItems": 2
-    },
-    "token_code_id": {
-      "description": "Token contract code id for initialization",
+        "type": "integer",
+        "format": "uint8",
       "type": "integer",
       "format": "uint64",
       "minimum": 0.0
