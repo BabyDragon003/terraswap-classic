@@ -1,4 +1,3 @@
-[workspace]
 members = ["packages/*", "contracts/*"]
 
 [profile.release.package.classic_terraswap]
@@ -8,3 +7,7 @@ debug-assertions = false
 codegen-units = 1
 incremental = false
 
+[profile.release]
+rpath = false
+lto = true
+overflow-checks = true

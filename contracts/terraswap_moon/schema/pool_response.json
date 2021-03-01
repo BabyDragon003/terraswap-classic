@@ -1,4 +1,3 @@
-{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "PoolResponse",
   "type": "object",
@@ -8,6 +7,17 @@
   ],
   "properties": {
     "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Asset"
+      },
+      "maxItems": 2,
+      "minItems": 2
+    },
+    "total_share": {
+      "$ref": "#/definitions/Uint128"
+    }
+  },
   "definitions": {
     "Asset": {
       "type": "object",

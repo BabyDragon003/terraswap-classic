@@ -1,4 +1,3 @@
-name: Release Artifacts
 on:
   push:
     tags:
