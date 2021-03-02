@@ -1,13 +1,8 @@
+#[cfg(not(feature = "library"))]
 use cosmwasm_std::entry_point;
 
 use cosmwasm_std::{
     from_binary, to_binary, Addr, Api, Binary, Coin, CosmosMsg, Deps, DepsMut, Env, MessageInfo,
-    QueryRequest, Response, StdError, StdResult, Uint128, WasmMsg, WasmQuery,
-};
-use cw2::set_contract_version;
-
-use crate::operations::execute_swap_operation;
-use crate::querier::{compute_reverse_tax, compute_tax};
 use crate::state::{Config, CONFIG};
 
 use classic_bindings::{SwapResponse, TerraMsg, TerraQuerier, TerraQuery};
