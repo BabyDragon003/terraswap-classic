@@ -8,17 +8,6 @@
         "receive"
       ],
       "properties": {
-        "receive": {
-          "$ref": "#/definitions/Cw20ReceiveMsg"
-        }
-      },
-      "additionalProperties": false
-    },
-    {
-      "description": "ProvideLiquidity a user provides pool liquidity",
-      "type": "object",
-      "required": [
-        "provide_liquidity"
       ],
       "properties": {
         "provide_liquidity": {

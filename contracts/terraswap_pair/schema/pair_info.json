@@ -3,16 +3,11 @@
   "title": "PairInfo",
   "type": "object",
   "required": [
-    "asset_decimals": {
-      "type": "array",
-      "items": {
-        "type": "integer",
-        "format": "uint8",
-        "minimum": 0.0
-      },
-      "maxItems": 2,
-      "minItems": 2
-    },
+    "asset_decimals",
+    "asset_infos",
+    "contract_addr",
+    "liquidity_token"
+  ],
     "asset_infos": {
       "type": "array",
       "items": {

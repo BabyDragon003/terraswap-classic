@@ -3,5 +3,11 @@
   "title": "InstantiateMsg",
   "type": "object",
   "required": [
+    "terraswap_factory"
+  ],
+  "properties": {
+    "terraswap_factory": {
+      "type": "string"
+    }
   }
 }
