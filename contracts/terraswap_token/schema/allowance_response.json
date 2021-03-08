@@ -1,4 +1,3 @@
-{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "AllowanceResponse",
   "type": "object",
@@ -8,6 +7,17 @@
   ],
   "properties": {
     "allowance": {
+      "$ref": "#/definitions/Uint128"
+    },
+    "expires": {
+      "$ref": "#/definitions/Expiration"
+    }
+  },
+  "definitions": {
+    "Expiration": {
+      "description": "Expiration represents a point in time when some event happens. It can compare with a BlockInfo and will return is_expired() == true once the condition is hit (and for every block in the future)",
+      "anyOf": [
+        {
           "description": "AtHeight will expire when `env.block.height` >= height",
           "type": "object",
           "required": [

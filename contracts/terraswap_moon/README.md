@@ -1,4 +1,3 @@
-# TerraSwap Moon
 
 ## Handlers
 
@@ -7,6 +6,17 @@
 This is mainly used from terraswap factory contract to create new terraswap moon. It initializes all swap created parameters which can be updated later with owner key.
 
 It creates liquidity token contract as init response, and execute init hook to register created liquidity token contract to self.
+
+```rust
+{
+    /// Asset infos
+    pub asset_infos: [AssetInfo; 2],
+    /// Token code ID for liqudity token creation
+    pub token_code_id: u64,
+    /// Hook for post initalization
+    pub init_hook: Option<InitHook>,
+}
+```
 
 ### Liquidity Provider
 

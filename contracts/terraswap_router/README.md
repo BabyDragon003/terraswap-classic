@@ -1,4 +1,3 @@
-# Terraswap Router <!-- omit in toc -->
 
 The Router Contract contains the logic to facilitate multi-hop swap operations via native & terraswap.
 
