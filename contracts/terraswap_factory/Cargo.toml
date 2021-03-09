@@ -1,3 +1,4 @@
+[package]
 name = "terraswap-factory"
 version = "0.1.0"
 authors = ["Terraform Labs, PTE.", "DELIGHT LABS"]

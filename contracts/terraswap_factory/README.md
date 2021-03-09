@@ -1,13 +1,8 @@
+# TerraSwap Factory
 
 The factory contract can perform creation of terraswap pair contract and also be used as directory contract for all pairs.
 
 ## InstantiateMsg
-Register verified pair contract and token contract for pair contract creation. The sender will be the owner of the factory contract.
-
-```json
-{
-  "pair_code_id": 123,
-  "token_code_id": 123,
   "init_hook": {
     "msg": "123",
     "contract_addr": "terra..."
