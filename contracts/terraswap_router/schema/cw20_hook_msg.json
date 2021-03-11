@@ -3,6 +3,12 @@
   "title": "Cw20HookMsg",
   "anyOf": [
     {
+      "type": "object",
+      "required": [
+        "execute_swap_operations"
+      ],
+      "properties": {
+        "execute_swap_operations": {
           "type": "object",
           "required": [
             "operations"

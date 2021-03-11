@@ -3,26 +3,16 @@ use crate::factory::{NativeTokenDecimalsResponse, QueryMsg as FactoryQueryMsg};
 use crate::pair::{QueryMsg as PairQueryMsg, ReverseSimulationResponse, SimulationResponse};
 
 use classic_bindings::TerraQuery;
+use cosmwasm_std::{
+    to_binary, Addr, AllBalanceResponse, BalanceResponse, BankQuery, Coin, QuerierWrapper,
+    QueryRequest, StdResult, Uint128, WasmQuery,
+};
+
+use cw20::{BalanceResponse as Cw20BalanceResponse, Cw20QueryMsg, TokenInfoResponse};
 
 pub fn query_balance(
     querier: &QuerierWrapper<TerraQuery>,
     account_addr: Addr,
-    denom: String,
-) -> StdResult<Uint128> {
-    // load price form the oracle
-    let balance: BalanceResponse = querier.query(&QueryRequest::Bank(BankQuery::Balance {
-        address: account_addr.to_string(),
-        denom,
-    }))?;
-    Ok(balance.amount.amount)
-}
-
-pub fn query_all_balances(
-    querier: &QuerierWrapper<TerraQuery>,
-    account_addr: Addr,
-) -> StdResult<Vec<Coin>> {
-    // load price form the oracle
-    let all_balances: AllBalanceResponse =
         querier.query(&QueryRequest::Bank(BankQuery::AllBalances {
             address: account_addr.to_string(),
         }))?;

@@ -3,6 +3,12 @@ use serde::{Deserialize, Serialize};
 
 use crate::asset::{Asset, AssetInfo, VestInfo};
 
+use cosmwasm_std::{Decimal, Uint128};
+use cw20::Cw20ReceiveMsg;
+
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq, JsonSchema)]
+pub struct InstantiateMsg {
+    pub clsm_addr: String,
     pub pair_vest: VestInfo,
     pub nft_vest: VestInfo,
     pub marketing_vest: VestInfo,

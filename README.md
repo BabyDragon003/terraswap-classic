@@ -3,6 +3,12 @@
 [![workflow](https://github.com/terraswap/classic-terraswap/actions/workflows/tests.yml/badge.svg)](https://github.com/terraswap/classic-terraswap/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/terraswap/classic-terraswap/branch/main/graph/badge.svg?token=ERMFLEY6Y7)](https://codecov.io/gh/terraswap/classic-terraswap)
 
+Uniswap-inspired automated market-maker (AMM) protocol powered by Smart Contracts on the [Terra](https://terra.money) blockchain.
+
+## Contracts
+
+| Name                                               | Description                                  |
+| -------------------------------------------------- | -------------------------------------------- |
 | [`terraswap_factory`](contracts/terraswap_factory) |                                              |
 | [`terraswap_pair`](contracts/terraswap_pair)       |                                              |
 | [`terraswap_router`](contracts/terraswap_router)   |                                              |
