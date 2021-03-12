@@ -13,16 +13,11 @@
         }
       },
       "additionalProperties": false
-        "simulation"
-      ],
-      "properties": {
-        "simulation": {
-          "type": "object",
-          "required": [
-            "offer_asset"
-          ],
-          "properties": {
-            "offer_asset": {
+    },
+    {
+      "type": "object",
+      "required": [
+        "pool"
               "$ref": "#/definitions/Asset"
             }
           }
