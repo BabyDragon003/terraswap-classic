@@ -3,12 +3,6 @@
 * [a189de](https://github.com/terraswap/classic-terraswap/pull/15/commits/a189de88440f5a26e4104aa950fddbcb259a457e) Prevention of share calculation overflow
 * [be08cb](https://github.com/terraswap/classic-terraswap/pull/15/commits/be08cb28d04b2310cadebe6a93a82d132303dc45) Refund & desired asset to provide liqudity
 * [0fd802](https://github.com/terraswap/classic-terraswap/pull/15/commits/0fd802c4174c2d227b5aeeac79aa1558d3909493) Decimal loss is paid by the user
-* [30aeb6](https://github.com/terraswap/classic-terraswap/pull/15/commits/30aeb63e7a4ee03d9c7e5930100d13e43556d761) min_assets support when withdraw
-* [5b3ff3](https://github.com/terraswap/classic-terraswap/pull/15/commits/5b3ff3a768521cec114b9ea6be051adbbd5e6d8c) Support deadline
-* [890a3b](https://github.com/terraswap/classic-terraswap/pull/15/commits/890a3b6414d8d78debe4d52bd1e583a9861acf9b) Revert slippage tolerance in provide liquidity
-* [11b8e6](https://github.com/terraswap/classic-terraswap/pull/15/commits/11b8e68623d64835018e74a97c5a146d5abb3579) Initial liquidity deduction for pair protection
-* [933ec4](https://github.com/terraswap/classic-terraswap/pull/15/commits/933ec4b53832227d1b0542c686ffa4977906ce05) Create pair with provide liquidity
-* [57232e](https://github.com/terraswap/classic-terraswap/pull/15/commits/57232eb3c48f585ee53ba6286d96914b8c33d58a) cosmwasm v1.0
 
 # 2.6.1
 

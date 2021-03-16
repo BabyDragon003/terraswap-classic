@@ -3,12 +3,6 @@
   "title": "InstantiateMsg",
   "type": "object",
   "required": [
-    "decimals",
-    "initial_balances",
-    "name",
-    "symbol"
-  ],
-  "properties": {
     "decimals": {
       "type": "integer",
       "format": "uint8",

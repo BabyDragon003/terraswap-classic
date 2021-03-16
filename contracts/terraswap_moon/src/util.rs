@@ -3,12 +3,6 @@ use cosmwasm_std::{
     to_binary, Addr, BalanceResponse as NativeBalanceResponse, BankMsg, BankQuery, Coin, CosmosMsg,
     QuerierWrapper, QueryRequest, Uint128, WasmMsg, WasmQuery,
 };
-use cw20::{BalanceResponse as CW20BalanceResponse, Cw20ExecuteMsg, Cw20QueryMsg, Denom};
-
-pub fn get_token_amount(
-    querier: QuerierWrapper,
-    denom: Denom,
-    contract_addr: Addr,
 ) -> Result<Uint128, ContractError> {
     match denom.clone() {
         Denom::Native(native_str) => {

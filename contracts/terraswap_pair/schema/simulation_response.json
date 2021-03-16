@@ -3,12 +3,6 @@
   "title": "SimulationResponse",
   "description": "SimulationResponse returns swap simulation response",
   "type": "object",
-  "required": [
-    "commission_amount",
-    "return_amount",
-    "spread_amount"
-  ],
-  "properties": {
     "commission_amount": {
       "$ref": "#/definitions/Uint128"
     },

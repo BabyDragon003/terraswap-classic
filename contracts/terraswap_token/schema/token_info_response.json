@@ -3,12 +3,6 @@
   "title": "TokenInfoResponse",
   "type": "object",
   "required": [
-    "decimals",
-    "name",
-    "symbol",
-    "total_supply"
-  ],
-  "properties": {
     "decimals": {
       "type": "integer",
       "format": "uint8",

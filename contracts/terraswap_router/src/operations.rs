@@ -3,12 +3,6 @@ use std::str::FromStr;
 use cosmwasm_std::{
     to_binary, Addr, Coin, CosmosMsg, Decimal, Deps, DepsMut, Env, MessageInfo, Response, StdError,
     StdResult, WasmMsg,
-};
-
-use crate::querier::compute_tax;
-use crate::state::{Config, CONFIG};
-
-use classic_bindings::{TerraMsg, TerraQuery};
 
 use classic_terraswap::asset::{Asset, AssetInfo, PairInfo};
 use classic_terraswap::pair::ExecuteMsg as PairExecuteMsg;
@@ -23,6 +17,32 @@ pub fn execute_swap_operation(
     deps: DepsMut<TerraQuery>,
     env: Env,
     info: MessageInfo,
+    operation: SwapOperation,
+    to: Option<String>,
+    deadline: Option<u64>,
+) -> StdResult<Response<TerraMsg>> {
+    if env.contract.address != info.sender {
+        return Err(StdError::generic_err("unauthorized"));
+    }
+
+    assert_deadline(env.block.time.seconds(), deadline)?;
+
+    let messages: Vec<CosmosMsg<TerraMsg>> = match operation {
+        SwapOperation::NativeSwap {
+            offer_denom,
+            ask_denom,
+        } => {
+            let amount =
+                query_balance(&deps.querier, env.contract.address, offer_denom.to_string())?;
+            if let Some(to) = to {
+                // if the operation is last, and requires send
+                // deduct tax from the offer_coin
+                let amount =
+                    amount.checked_sub(compute_tax(&deps.querier, amount, offer_denom.clone())?)?;
+                vec![CosmosMsg::from(TerraMsg::create_swap_send_msg(
+                    to,
+                    Coin {
+                        denom: offer_denom,
                         amount,
                     },
                     ask_denom,

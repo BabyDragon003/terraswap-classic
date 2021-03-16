@@ -3,12 +3,6 @@ use crate::factory::{NativeTokenDecimalsResponse, QueryMsg as FactoryQueryMsg};
 use crate::pair::{QueryMsg as PairQueryMsg, ReverseSimulationResponse, SimulationResponse};
 
 use classic_bindings::TerraQuery;
-use cosmwasm_std::{
-    to_binary, Addr, AllBalanceResponse, BalanceResponse, BankQuery, Coin, QuerierWrapper,
-    QueryRequest, StdResult, Uint128, WasmQuery,
-};
-
-use cw20::{BalanceResponse as Cw20BalanceResponse, Cw20QueryMsg, TokenInfoResponse};
 
 pub fn query_balance(
     querier: &QuerierWrapper<TerraQuery>,

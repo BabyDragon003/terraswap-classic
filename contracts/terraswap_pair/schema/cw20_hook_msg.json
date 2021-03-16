@@ -3,12 +3,6 @@
   "title": "Cw20HookMsg",
   "anyOf": [
     {
-      "description": "Sell a given amount of asset",
-      "type": "object",
-      "required": [
-        "swap"
-      ],
-      "properties": {
         "swap": {
           "type": "object",
           "properties": {

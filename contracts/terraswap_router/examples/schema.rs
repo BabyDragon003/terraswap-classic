@@ -3,12 +3,6 @@ use std::fs::create_dir_all;
 
 use classic_terraswap::router::{
     ConfigResponse, Cw20HookMsg, ExecuteMsg, InstantiateMsg, QueryMsg,
-};
-use cosmwasm_schema::{export_schema, remove_schemas, schema_for};
-
-fn main() {
-    let mut out_dir = current_dir().unwrap();
-    out_dir.push("schema");
     create_dir_all(&out_dir).unwrap();
     remove_schemas(&out_dir).unwrap();
 
