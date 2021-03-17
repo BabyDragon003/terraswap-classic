@@ -3,6 +3,12 @@
   "title": "InstantiateMsg",
   "type": "object",
   "required": [
+    "asset_decimals",
+    "asset_infos",
+    "token_code_id"
+  ],
+  "properties": {
+    "asset_decimals": {
       "type": "array",
       "items": {
         "type": "integer",

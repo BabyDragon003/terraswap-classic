@@ -3,16 +3,11 @@ use serde::{Deserialize, Serialize};
 
 use crate::asset::{Asset, AssetInfo, VestInfo};
 
-    pub pair_vest: VestInfo,
-    pub nft_vest: VestInfo,
-    pub marketing_vest: VestInfo,
-    pub game_vest: VestInfo,
-    pub team_vest: VestInfo,
-}
+use cosmwasm_std::{Decimal, Uint128};
+use cw20::Cw20ReceiveMsg;
 
-#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
-#[serde(rename_all = "snake_case")]
-pub enum MoonExecuteMsg {
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq, JsonSchema)]
+pub struct InstantiateMsg {
     VestingMint {},
     DynamicMintFromLunc {
         amount: Uint128,

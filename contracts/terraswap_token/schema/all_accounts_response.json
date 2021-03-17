@@ -3,6 +3,12 @@
   "title": "AllAccountsResponse",
   "type": "object",
   "required": [
+    "accounts"
+  ],
+  "properties": {
+    "accounts": {
+      "type": "array",
+      "items": {
         "type": "string"
       }
     }
