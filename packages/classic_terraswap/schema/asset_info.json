@@ -8,29 +8,18 @@
       "required": [
         "token"
       ],
-        }
-      },
-      "additionalProperties": false
-    },
-    {
-      "type": "object",
-      "required": [
-        "native_token"
-      ],
       "properties": {
-        "native_token": {
+        "token": {
           "type": "object",
           "required": [
-            "denom"
+            "contract_addr"
           ],
           "properties": {
-            "denom": {
+            "contract_addr": {
               "type": "string"
             }
           }
         }
       },
       "additionalProperties": false
-    }
-  ]
-}
+    },

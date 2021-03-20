@@ -8,36 +8,21 @@
       "required": [
         "update_config"
       ],
-              "type": [
-                "integer",
-                "null"
-              ],
-              "format": "uint64",
-              "minimum": 0.0
-            },
-            "token_code_id": {
-              "type": [
-                "integer",
-                "null"
-              ],
-              "format": "uint64",
-              "minimum": 0.0
-            }
-          }
-        }
-      },
-      "additionalProperties": false
-    },
-    {
-      "description": "CreatePair instantiates pair contract",
-      "type": "object",
-      "required": [
-        "create_pair"
-      ],
       "properties": {
-        "create_pair": {
+        "update_config": {
           "type": "object",
-          "required": [
+          "properties": {
+            "owner": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "pair_code_id": {
+              "type": [
+                "integer",
+                "null"
+              ],
             "assets"
           ],
           "properties": {

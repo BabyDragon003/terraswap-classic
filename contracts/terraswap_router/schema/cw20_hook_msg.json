@@ -8,36 +8,21 @@
         "execute_swap_operations"
       ],
       "properties": {
+        "execute_swap_operations": {
+          "type": "object",
+          "required": [
+            "operations"
+          ],
+          "properties": {
+            "deadline": {
+              "type": [
+                "integer",
+                "null"
+              ],
               "format": "uint64",
               "minimum": 0.0
             },
             "minimum_receive": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/Uint128"
-                },
-                {
-                  "type": "null"
-                }
-              ]
-            },
-            "operations": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/SwapOperation"
-              }
-            },
-            "to": {
-              "type": [
-                "string",
-                "null"
-              ]
-            }
-          }
-        }
-      },
-      "additionalProperties": false
-    }
   ],
   "definitions": {
     "AssetInfo": {
