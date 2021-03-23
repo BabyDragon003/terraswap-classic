@@ -1,3 +1,4 @@
+use classic_terraswap::querier::{query_balance, query_pair_info_from_pair};
 #[cfg(not(feature = "library"))]
 use cosmwasm_std::entry_point;
 use cosmwasm_std::{

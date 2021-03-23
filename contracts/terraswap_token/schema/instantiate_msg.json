@@ -1,13 +1,8 @@
+{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "InstantiateMsg",
   "type": "object",
   "required": [
-    "decimals",
-    "initial_balances",
-    "name",
-    "symbol"
-  ],
-  "properties": {
     "decimals": {
       "type": "integer",
       "format": "uint8",
