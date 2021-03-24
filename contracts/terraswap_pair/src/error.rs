@@ -4,15 +4,10 @@ use thiserror::Error;
 #[derive(Error, Debug, PartialEq)]
 pub enum ContractError {
     #[error("{0}")]
-    ConversionOverflowError(#[from] ConversionOverflowError),
+    Std(#[from] StdError),
 
-    #[error("Unauthorized")]
-    Unauthorized {},
-
-    #[error("Invalid zero amount")]
-    InvalidZeroAmount {},
-
-    #[error("No moon contract address")]
+    #[error("{0}")]
+    OverflowError(#[from] OverflowError),
     NoMoonContractAddress {},
 
     #[error("Max spread assertion")]

@@ -3,6 +3,12 @@ use crate::mock_querier::mock_dependencies;
 use crate::querier::{
     query_all_balances, query_balance, query_pair_info, query_token_balance, query_token_info,
 };
+
+use cosmwasm_std::testing::MOCK_CONTRACT_ADDR;
+use cosmwasm_std::{
+    coin, to_binary, Addr, Api, BankMsg, Coin, CosmosMsg, Decimal, MessageInfo, StdError, Uint128,
+    WasmMsg,
+};
 use cw20::Cw20ExecuteMsg;
 
 #[test]
