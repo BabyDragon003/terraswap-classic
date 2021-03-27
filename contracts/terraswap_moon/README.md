@@ -18,16 +18,11 @@ It creates liquidity token contract as init response, and execute init hook to r
     pub init_hook: Option<InitHook>,
 }
 ```
-A `deadline` sets a time after which a transaction can no longer be executed. This limits validators holding signed transactions for extended durations and executing them based off market movements. It also reduces uncertainty around transactions that take a long time to execute due to issues with gas price.
 
-#### Request Format
+### Liquidity Provider
 
-- Provide Liquidity
+The contract has two types of pool, the one is collateral and the other is asset pool. A user can provide liquidity to each pool by sending `provide_liquidity` msgs and also can withdraw with `withdraw_liquidity` msgs.
 
-  ```json
-  {
-    "provide_liquidity": {
-      "assets": [
         {
           "info": {
             "token": {

@@ -18,16 +18,11 @@ pub fn migrate_version(
     name: &str,
     version: &str,
 ) -> StdResult<()> {
+    let prev_version = get_contract_version(deps.as_ref().storage)?;
+    if prev_version.contract != name {
+        return Err(StdError::generic_err("invalid contract"));
+    }
 
-#[test]
-fn test_assert_deadline_with_expired() {
-    let err = assert_deadline(10u64, Some(5u64)).unwrap_err();
-    assert_eq!(err, StdError::generic_err("Expired deadline"))
-}
-
-#[test]
-fn test_assert_deadline_with_same() {
-    let err = assert_deadline(10u64, Some(10u64)).unwrap_err();
     assert_eq!(err, StdError::generic_err("Expired deadline"))
 }
 
