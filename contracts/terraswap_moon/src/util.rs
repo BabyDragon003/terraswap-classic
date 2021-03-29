@@ -1,4 +1,3 @@
-use crate::error::ContractError;
 use cosmwasm_std::{
     to_binary, Addr, BalanceResponse as NativeBalanceResponse, BankMsg, BankQuery, Coin, CosmosMsg,
     QuerierWrapper, QueryRequest, Uint128, WasmMsg, WasmQuery,
