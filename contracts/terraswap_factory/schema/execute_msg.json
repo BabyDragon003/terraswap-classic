@@ -3,16 +3,11 @@
   "title": "ExecuteMsg",
   "anyOf": [
     {
-        "update_config": {
-          "type": "object",
-          "properties": {
-            "owner": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "pair_code_id": {
+      "description": "UpdateConfig update relevant code IDs",
+      "type": "object",
+      "required": [
+        "update_config"
+      ],
               "type": [
                 "integer",
                 "null"
