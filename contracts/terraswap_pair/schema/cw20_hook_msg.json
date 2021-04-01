@@ -13,22 +13,6 @@
           "type": "object",
           "properties": {
             "belief_price": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/Decimal"
-                },
-                {
-                  "type": "null"
-                }
-              ]
-            },
-            "deadline": {
-              "type": [
-                "integer",
-                "null"
-              ],
-              "format": "uint64",
-              "minimum": 0.0
             },
             "max_spread": {
               "anyOf": [

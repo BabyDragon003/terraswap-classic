@@ -8,6 +8,17 @@ use cw_storage_plus::{Bound, Item, Map};
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq, JsonSchema)]
 pub struct Config {
     pub owner: CanonicalAddr,
+    pub pair_code_id: u64,
+    pub token_code_id: u64,
+    pub clsm_addr: CanonicalAddr,
+}
+
+pub const CONFIG: Item<Config> = Item::new("config");
+
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq, JsonSchema)]
+pub struct TmpPairInfo {
+    pub pair_key: Vec<u8>,
+    pub assets: [AssetRaw; 2],
     pub asset_decimals: [u8; 2],
     pub sender: Addr,
 }
