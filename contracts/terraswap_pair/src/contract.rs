@@ -18,6 +18,27 @@ use classic_terraswap::pair::{
     Cw20HookMsg, ExecuteMsg, InstantiateMsg, MigrateMsg, PoolResponse, QueryMsg,
     ReverseSimulationResponse, SimulationResponse,
 };
+use classic_terraswap::moon::{
+    MoonExecuteMsg
+};
+use classic_terraswap::querier::{query_token_info, query_token_balance};
+use classic_terraswap::token::InstantiateMsg as TokenInstantiateMsg;
+use classic_terraswap::util::{assert_deadline, migrate_version};
+use cw2::set_contract_version;
+use cw20::{Cw20ExecuteMsg, Cw20ReceiveMsg, MinterResponse};
+use protobuf::Message;
+use std::cmp::Ordering;
+use std::convert::TryInto;
+use std::ops::Mul;
+
+// version info for migration info
+const CONTRACT_NAME: &str = "crates.io:terraswap-pair";
+const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
+
+const INSTANTIATE_REPLY_ID: u64 = 1;
+
+/// Commission rate == 0.2%
+const COMMISSION_RATE: u64 = 2;
 
 const MINIMUM_LIQUIDITY_AMOUNT: u128 = 1_000;
 const DAY_SECONDS: u64 = 86400;

@@ -23,25 +23,3 @@
       },
       "additionalProperties": false
     },
-    {
-      "type": "object",
-      "required": [
-        "native_token"
-      ],
-      "properties": {
-        "native_token": {
-          "type": "object",
-          "required": [
-            "denom"
-          ],
-          "properties": {
-            "denom": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "additionalProperties": false
-    }
-  ]
-}
