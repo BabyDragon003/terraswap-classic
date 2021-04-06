@@ -1,3 +1,4 @@
+name: Formatting Check & Test
 
 on:
   pull_request:
