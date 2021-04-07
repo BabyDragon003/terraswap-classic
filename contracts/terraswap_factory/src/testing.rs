@@ -3,6 +3,12 @@ use classic_bindings::TerraQuery;
 use crate::contract::{execute, instantiate, query, reply};
 use classic_terraswap::mock_querier::{mock_dependencies, WasmMockQuerier};
 
+use crate::state::{pair_key, TmpPairInfo, TMP_PAIR_INFO};
+
+use classic_terraswap::asset::{Asset, AssetInfo, PairInfo};
+use classic_terraswap::factory::{
+    ConfigResponse, ExecuteMsg, InstantiateMsg, NativeTokenDecimalsResponse, QueryMsg,
+};
 use classic_terraswap::pair::{
     ExecuteMsg as PairExecuteMsg, InstantiateMsg as PairInstantiateMsg,
     MigrateMsg as PairMigrateMsg,
