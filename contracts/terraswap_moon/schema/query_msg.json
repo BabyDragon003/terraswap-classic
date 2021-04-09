@@ -18,27 +18,6 @@
       "type": "object",
       "required": [
         "pool"
-      ],
-      "properties": {
-        "pool": {
-          "type": "object"
-        }
-      },
-      "additionalProperties": false
-    },
-    {
-      "type": "object",
-      "required": [
-        "simulation"
-      ],
-      "properties": {
-        "simulation": {
-          "type": "object",
-          "required": [
-            "offer_asset"
-          ],
-          "properties": {
-            "offer_asset": {
               "$ref": "#/definitions/Asset"
             }
           }

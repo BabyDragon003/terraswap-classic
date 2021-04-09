@@ -8,26 +8,16 @@ be deloyed as is, or imported into other contracts to easily build
 cw20-compatible tokens with custom logic.
 
 Implements:
-`cargo test`
 
-Once you are happy with the content, you can compile it to wasm via:
+- [x] CW20 Base
+- [ ] Mintable extension
+- [ ] Allowances extension
 
-```
-RUSTFLAGS='-C link-arg=-s' cargo wasm
-cp ../../target/wasm32-unknown-unknown/release/cw20_base.wasm .
-ls -l cw20_base.wasm
-sha256sum cw20_base.wasm
-```
+## Running this contract
 
-Or for a production-ready (compressed) build, run the following from the
-repository root:
+You will need Rust 1.44.1+ with `wasm32-unknown-unknown` target installed.
 
-```
-docker run --rm -v "$(pwd)":/code \
-  --mount type=volume,source="cosmwasm_plus_cache",target=/code/target \
-  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
-  cosmwasm/workspace-optimizer:0.10.2
-```
+You can run unit tests on this via:
 
 The optimized contracts are generated in the `artifacts/` directory.
 

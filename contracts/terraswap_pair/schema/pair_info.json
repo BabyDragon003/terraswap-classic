@@ -8,26 +8,16 @@
     "contract_addr",
     "liquidity_token"
   ],
-    "asset_infos": {
+  "properties": {
+    "asset_decimals": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/AssetInfo"
+        "type": "integer",
+        "format": "uint8",
+        "minimum": 0.0
       },
       "maxItems": 2,
       "minItems": 2
-    },
-    "contract_addr": {
-      "type": "string"
-    },
-    "liquidity_token": {
-      "type": "string"
-    }
-  },
-  "definitions": {
-    "AssetInfo": {
-      "description": "AssetInfo contract_addr is usually passed from the cw20 hook so we can trust the contract_addr is properly validated.",
-      "anyOf": [
-        {
           "type": "object",
           "required": [
             "token"
