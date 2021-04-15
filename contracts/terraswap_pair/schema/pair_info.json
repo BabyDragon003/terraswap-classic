@@ -1,3 +1,4 @@
+{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "PairInfo",
   "type": "object",
@@ -12,22 +13,6 @@
       "type": "array",
       "items": {
         "type": "integer",
-        "format": "uint8",
-        "minimum": 0.0
-      },
-      "maxItems": 2,
-      "minItems": 2
-    },
-    "asset_infos": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/AssetInfo"
-      },
-      "maxItems": 2,
-      "minItems": 2
-    },
-    "contract_addr": {
-      "type": "string"
     },
     "liquidity_token": {
       "type": "string"

@@ -1,3 +1,4 @@
+{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "PairsResponse",
   "type": "object",
@@ -12,22 +13,6 @@
       }
     }
   },
-  "definitions": {
-    "AssetInfo": {
-      "description": "AssetInfo contract_addr is usually passed from the cw20 hook so we can trust the contract_addr is properly validated.",
-      "anyOf": [
-        {
-          "type": "object",
-          "required": [
-            "token"
-          ],
-          "properties": {
-            "token": {
-              "type": "object",
-              "required": [
-                "contract_addr"
-              ],
-              "properties": {
                 "contract_addr": {
                   "type": "string"
                 }

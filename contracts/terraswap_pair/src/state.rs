@@ -1,3 +1,4 @@
+use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 use classic_terraswap::asset::PairInfoRaw;
 use cw_storage_plus::Item;
