@@ -1,4 +1,3 @@
-use classic_bindings::TerraQuery;
 
 use crate::contract::{execute, instantiate, query, reply};
 use classic_terraswap::mock_querier::{mock_dependencies, WasmMockQuerier};
