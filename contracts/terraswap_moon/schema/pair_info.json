@@ -1,13 +1,8 @@
+{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "MoonInfo",
   "type": "object",
   "required": [
-    "asset_decimals",
-    "asset_infos",
-    "contract_addr",
-    "liquidity_token"
-  ],
-  "properties": {
     "asset_decimals": {
       "type": "array",
       "items": {

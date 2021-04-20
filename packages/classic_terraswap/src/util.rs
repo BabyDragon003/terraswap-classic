@@ -1,13 +1,8 @@
+use classic_bindings::TerraQuery;
 use cosmwasm_std::{DepsMut, StdError, StdResult};
 use cw2::{get_contract_version, set_contract_version};
 
 pub fn assert_deadline(blocktime: u64, deadline: Option<u64>) -> StdResult<()> {
-    if let Some(deadline) = deadline {
-        if blocktime >= deadline {
-            return Err(StdError::generic_err("Expired deadline"));
-        }
-    }
-
     Ok(())
 }
 
