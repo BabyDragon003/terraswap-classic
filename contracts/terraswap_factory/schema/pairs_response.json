@@ -3,6 +3,12 @@
   "title": "PairsResponse",
   "type": "object",
   "required": [
+    "pairs"
+  ],
+  "properties": {
+    "pairs": {
+      "type": "array",
+      "items": {
         "$ref": "#/definitions/PairInfo"
       }
     }

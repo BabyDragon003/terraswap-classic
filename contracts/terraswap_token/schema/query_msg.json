@@ -8,17 +8,6 @@
       "required": [
         "balance"
       ],
-      "properties": {
-        "balance": {
-          "type": "object",
-          "required": [
-            "address"
-          ],
-          "properties": {
-            "address": {
-              "type": "string"
-            }
-          }
         }
       },
       "additionalProperties": false

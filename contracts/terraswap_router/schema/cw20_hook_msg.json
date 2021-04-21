@@ -3,16 +3,11 @@
   "title": "Cw20HookMsg",
   "anyOf": [
     {
-          "type": "object",
-          "required": [
-            "operations"
-          ],
-          "properties": {
-            "deadline": {
-              "type": [
-                "integer",
-                "null"
-              ],
+      "type": "object",
+      "required": [
+        "execute_swap_operations"
+      ],
+      "properties": {
               "format": "uint64",
               "minimum": 0.0
             },
