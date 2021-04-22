@@ -8,6 +8,17 @@ This is mainly used from terraswap factory contract to create new terraswap moon
 
 It creates liquidity token contract as init response, and execute init hook to register created liquidity token contract to self.
 
+```rust
+{
+    /// Asset infos
+    pub asset_infos: [AssetInfo; 2],
+    /// Token code ID for liqudity token creation
+    pub token_code_id: u64,
+    /// Hook for post initalization
+    pub init_hook: Option<InitHook>,
+}
+```
+
 ### Liquidity Provider
 
 The contract has two types of pool, the one is collateral and the other is asset pool. A user can provide liquidity to each pool by sending `provide_liquidity` msgs and also can withdraw with `withdraw_liquidity` msgs.
