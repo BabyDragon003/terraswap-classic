@@ -13,19 +13,13 @@
           "type": "object",
           "required": [
             "contract_addr"
-        "native_token": {
-          "type": "object",
-          "required": [
-            "denom"
           ],
           "properties": {
-            "denom": {
+            "contract_addr": {
               "type": "string"
             }
           }
         }
       },
       "additionalProperties": false
-    }
-  ]
-}
+    },
