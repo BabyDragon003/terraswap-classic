@@ -18,6 +18,27 @@ pub struct Asset {
 
 impl fmt::Display for Asset {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}{}", self.amount, self.info)
+    }
+}
+
+static DECIMAL_FRACTION: Uint128 = Uint128::new(1_000_000_000_000_000_000u128);
+
+impl Asset {
+    pub fn is_native_token(&self) -> bool {
+        self.info.is_native_token()
+    }
+
+    pub fn compute_tax(&self, querier: &QuerierWrapper<TerraQuery>) -> StdResult<Uint128> {
+        let amount = self.amount;
+        if let AssetInfo::NativeToken { denom } = &self.info {
+            let terra_querier = TerraQuerier::new(querier);
+            let tax_rate: Decimal = (terra_querier.query_tax_rate()?).rate;
+            let tax_cap: Uint128 = (terra_querier.query_tax_cap(denom.to_string())?).cap;
+            Ok(std::cmp::min(
+                amount.checked_sub(amount.multiply_ratio(
+                    DECIMAL_FRACTION,
+                    DECIMAL_FRACTION * tax_rate + DECIMAL_FRACTION,
                 ))?,
                 tax_cap,
             ))
