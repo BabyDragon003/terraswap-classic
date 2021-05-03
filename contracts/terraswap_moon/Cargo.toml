@@ -1,4 +1,3 @@
-[package]
 name = "terraswap-moon"
 version = "0.2.0"
 authors = ["Terraform Labs, PTE.", "DELIGHT LABS"]
