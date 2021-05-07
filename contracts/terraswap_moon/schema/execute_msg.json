@@ -18,27 +18,6 @@
       "description": "ProvideLiquidity a user provides pool liquidity",
       "type": "object",
       "required": [
-        "provide_liquidity"
-      ],
-      "properties": {
-        "provide_liquidity": {
-          "type": "object",
-          "required": [
-            "assets"
-          ],
-          "properties": {
-            "assets": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Asset"
-              },
-              "maxItems": 2,
-              "minItems": 2
-            },
-            "deadline": {
-              "type": [
-                "integer",
-                "null"
               ],
               "format": "uint64",
               "minimum": 0.0
