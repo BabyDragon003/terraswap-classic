@@ -23,6 +23,32 @@ pub enum MoonExecuteMsg {
     DynamicMintFromLunc {
         amount: Uint128,
         price: Decimal
+    },
+    DynamicMintFromUstc {
+        amount: Uint128,
+        price: Decimal
+    },
+}
+
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq, JsonSchema)]
+#[serde(rename_all = "snake_case")]
+pub enum Cw20HookMsg {
+    SendToken {
+        amount: Uint128
+    },
+}
+
+// We define a custom struct for each query response
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq, JsonSchema)]
+pub struct PoolResponse {
+    pub assets: [Asset; 2],
+    pub total_share: Uint128,
+}
+
+/// SimulationResponse returns swap simulation response
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq, JsonSchema)]
+pub struct SimulationResponse {
+    pub return_amount: Uint128,
     pub spread_amount: Uint128,
     pub commission_amount: Uint128,
 }
